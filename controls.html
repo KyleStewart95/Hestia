@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hestia</title>
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="styles/styles.css">
+    <link rel="stylesheet" media="screen and (max-width: 899px)" href="styles/smallscreen.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/hover.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="scripts/graphAPI.js"></script>
+    <script type="text/javascript" src="scripts/dropdown.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous"></script>
+    <script src="scripts/controls.js"></script>
+    <script src="https://unpkg.com/vanilla-picker@2"></script>
+    <script src="scripts/openweather.js"></script>
+    <script src="scripts/accessibility.js"></script>
+    <script src="scripts/theme_selection.js"></script>
+    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" alt="Fav icon" />
+</head>
+<body id="text">
+<div id="openweather" class="openweather"></div>
+
+<!--
+--------------------------------------------------------------------------------
+                                Navigation
+--------------------------------------------------------------------------------
+-->
+
+<div class="nav">
+    <div class="topArea">
+        <a href="users.html">
+            <img src="img/user.png" alt="user icon" class="navTopIcon">
+        </a>
+    </div>
+
+    <div class="break"></div>
+
+    <div class="midArea">
+        <a href="index.html">
+            <img src="img/home.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="controls.html">
+            <img src="img/menu.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room1.html">
+            <img src="img/kitchen.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room2.html">
+            <img src="img/livingroom.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room3.html">
+            <img src="img/bedroom.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room4.html">
+            <img src="img/bathroom.png" alt="user icon" class="navMidIcon">
+        </a>
+    </div>
+
+    <div class="break"></div>
+
+    <div class="botArea">
+        <a href="accessibility.html">
+            <img src="img/acc.png" alt="user icon" class="navBotIcon">
+        </a>
+        <a href="settings.html">
+            <img src="img/settings.png" alt="user icon" class="navBotIcon">
+        </a>
+    </div>
+
+</div>
+
+<!--
+--------------------------------------------------------------------------------
+                                Content
+--------------------------------------------------------------------------------
+-->
+
+<div class="content" id="main">
+
+    <div class="bannerArea">
+        <a name="home"></a>
+        <img src="img/smarthomesmall.jpg" alt="Smart Home Image" class="bannerImage">
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="information"><h3>Information</h3></a>
+            </div>
+            <div class="contentArea">
+                <p>
+                    These controls will affect the house as a whole, if you want to change a specific room please select
+                    it from the main menu.
+                    <br>
+                    To control specific rooms go the according rooms control page.
+                </p>
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="controlsLighting"><h3>Lighting Controls</h3></a>
+            </div>
+            <div class="contentArea">
+                <div class="lightArea">
+                    <div class="switchArea">
+                        <input type="checkbox" id="switch" class="lightSwitch">
+                        <label class="labelSlider" for="switch">Toggle</label>
+                    </div>
+                    <div class="myDIV" id="light1">
+                        <div class="slidecontainer">
+                            <input type="range" min="1" max="100" value="50" class="slider1">
+                            <p>lighting level: <span id="lightValue1"></span>%</p>
+                        </div>
+                        <div class="colorPicker">
+                            <form action="">
+                                <input class="lightColorSelect" type="color" value="#ff0000" id="colorWell">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="controlsTemperature"><h3>Temperature Controls</h3></a>
+            </div>
+            <div class="contentArea">
+                <div id="input_div" class="tempControlArea">
+                    <div class="controlButtonArea">
+                        <input class="controlButton leftBorderRounded" type="button" value="-" id="mins">
+                        <input class="tempControl" disabled readonly type="text" value="18" id="count"> <!-- Change value for what is pulled for the DB. -->
+                        <input class="controlButton rightBorderRounded" type="button" value="+" id="plus">
+                        <input class="controlButtonSubmit" type="button" value="Update" id="submit">
+                    </div>
+                </div>
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

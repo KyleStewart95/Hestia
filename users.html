@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hestia</title>
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="styles/styles.css">
+    <link rel="stylesheet" media="screen and (max-width: 899px)" href="styles/smallscreen.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/hover.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="scripts/graphAPI.js"></script>
+    <script type="text/javascript" src="scripts/dropdown.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous"></script>
+    <script src="scripts/controls.js"></script>
+    <script src="https://unpkg.com/vanilla-picker@2"></script>
+    <script src="scripts/openweather.js"></script>
+    <script src="scripts/accessibility.js"></script>
+    <script src="scripts/theme_selection.js"></script>
+    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" alt="Fav icon" />
+</head>
+<body id="text">
+<div id="openweather" class="openweather"></div>
+
+<!--
+--------------------------------------------------------------------------------
+                                Navigation
+--------------------------------------------------------------------------------
+-->
+
+<div class="nav">
+    <div class="topArea">
+        <a href="users.html">
+            <img src="img/user.png" alt="user icon" class="navTopIcon">
+        </a>
+    </div>
+
+    <div class="break"></div>
+
+    <div class="midArea">
+        <a href="index.html">
+            <img src="img/home.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="controls.html">
+            <img src="img/menu.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room1.html">
+            <img src="img/kitchen.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room2.html">
+            <img src="img/livingroom.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room3.html">
+            <img src="img/bedroom.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room4.html">
+            <img src="img/bathroom.png" alt="user icon" class="navMidIcon">
+        </a>
+    </div>
+
+    <div class="break"></div>
+
+    <div class="botArea">
+        <a href="accessibility.html">
+            <img src="img/acc.png" alt="user icon" class="navBotIcon">
+        </a>
+        <a href="settings.html">
+            <img src="img/settings.png" alt="user icon" class="navBotIcon">
+        </a>
+    </div>
+
+</div>
+
+<!--
+--------------------------------------------------------------------------------
+                                Content
+--------------------------------------------------------------------------------
+-->
+
+<div class="content" id="main">
+
+    <div class="bannerArea">
+        <a name="home"></a>
+        <img src="img/smarthomesmall.jpg" alt="Smart Home Image" class="bannerImage">
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="information"><h3>User Information</h3></a>
+            </div>
+            <div class="contentArea">
+                <form action="#">
+                    <label for="fname"><p style="text-space: 0;">First Name:</p></label>
+                    <input class="inputStyle" type="text" id="fname" name="fname" value="John">
+
+                    <label for="lname"><p>Last Name:</p></label>
+                    <input class="inputStyle" type="text" id="lname" name="lname" value="Smith">
+
+                    <label for="email"><p>Email Address:</p></label>
+                    <input class="inputStyle" type="text" id="email" name="email" value="j.smith@gmail.com">
+
+                    <label for="username"><p>Username:</p></label>
+                    <input class="inputStyle" type="text" id="username" name="username" value="JSmith2000" disabled readonly>
+
+                    <input class="inputButton" type="submit" value="Update">
+                </form>
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="passwordinformation"><h3>Change password</h3></a>
+            </div>
+            <div class="contentArea">
+                <form action="#">
+                    <label for="password"><p>Current Password:</p></label>
+                    <input class="inputStyle" type="password" id="password" name="password" placeholder="Enter your current password">
+
+                    <label for="newpassword"><p>New Password:</p></label>
+                    <input class="inputStyle" type="password" id="newpassword" name="newpassword" placeholder="Enter your new password">
+
+                    <label for="newpasswordconfirm"><p>Confirm new Password:</p></label>
+                    <input class="inputStyle" type="password" id="newpasswordconfirm" name="newpasswordconfirm" placeholder="Enter your new password">
+
+                    <input class="inputButton" type="submit" value="Update">
+                </form>
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="achievements"><h3>Achievements</h3></a>
+            </div>
+            <div class="contentArea">
+                <table>
+                    <tr>
+                        <th class="table20">Achievements</th>
+                        <th class="table20">Name</th>
+                        <th class="table60">Description</th>
+                    </tr>
+                    <tr>
+                        <td class="expandingHeigh">
+                            <img src="img/lock.png" alt="Achievement Icon" class="exampleIcon">
+                        </td>
+                        <td class="tablePadding"><p>First Week</p></td>
+                        <td class="tablePadding">
+                            <p>
+                                Complete your first week.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="expandingHeigh">
+                            <img src="img/lock.png" alt="Achievement Icon" class="exampleIcon">
+                        </td>
+                        <td class="tablePadding"><p>First Month</p></td>
+                        <td class="tablePadding">
+                            <p>
+                                Complete your first month.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="expandingHeigh">
+                            <img src="img/lock.png" alt="Achievement Icon" class="exampleIcon">
+                        </td>
+                        <td class="tablePadding"><p>First Year</p></td>
+                        <td class="tablePadding">
+                            <p>
+                                Complete your first year.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="expandingHeigh">
+                            <img src="img/lock.png" alt="Achievement Icon" class="exampleIcon">
+                        </td>
+                        <td class="tablePadding"><p>Improve</p></td>
+                        <td class="tablePadding">
+                            <p>
+                                Make an improvement in your energy usage.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="expandingHeigh">
+                            <img src="img/lock.png" alt="Achievement Icon" class="exampleIcon">
+                        </td>
+                        <td class="tablePadding"><p>Your home, your way!</p></td>
+                        <td class="tablePadding">
+                            <p>
+                                Take control your home.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="expandingHeigh">
+                            <img src="img/lock.png" alt="Achievement Icon" class="exampleIcon">
+                        </td>
+                        <td class="tablePadding"><p>Security</p></td>
+                        <td class="tablePadding">
+                            <p>
+                                Change your password, we recommend to do this every 28 days.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

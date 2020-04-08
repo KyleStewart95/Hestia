@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bandu Beeds - Hestia</title>
+    <link rel="stylesheet" href="styles/loginorreg.css">
+</head>
+<body>
+
+<div class="loginArea">
+    <form action="" name="myForm" onsubmit="return validateForm()" method="post">
+        <label for="username"><p>Username:</p></label><br>
+        <input class="inputStyle" type="text" id="username" name="username" placeholder="Enter Username"><br>
+
+        <label for="password"><p>Password:</p></label><br>
+        <input class="inputStyle" type="password" id="password" name="password" placeholder="Enter password"><br><br>
+
+        <input class="inputButton" type="submit" value="Login" id='validate'>
+    </form>
+    <br>
+    <a href="">Forgotten Username or Password?</a>
+    <br>
+    <br>
+    <a href="register">Register here</a>
+    <br>
+</div>
+
+<script>
+
+    function validateForm() {
+        var a = document.forms["myForm"]["username"].value;
+        if (a == "") {
+            alert("Username must be filled out");
+            return false;
+        }
+        var b = document.forms["myForm"]["password"].value;
+        if (b == "") {
+            alert("Password must be filled out");
+            return false;
+        }
+    }
+
+    function validate() {
+        var $result = $("#result");
+        var email = $("#email").val();
+        $result.text("");
+
+        if (validateEmail(email)) {
+            //$result.text(email + " is valid :)");
+            //$result.css("color", "green");
+        } else {
+            alert("Email address is not valid");
+            return false;
+        }
+    }
+
+    $("#validate").on("click", validate);
+    // Validation sourced from https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+
+
+</script>
+
+</body>
+</html>

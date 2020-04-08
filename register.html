@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bandu Beeds - Hestia</title>
+    <link rel="stylesheet" href="styles/loginorreg.css">
+</head>
+<body>
+
+<div class="loginArea">
+    <form action="" name="myForm" onsubmit="return validateForm()" method="post">
+        <label for="fname"><p>First Name:</p></label><br>
+        <input class="inputStyle" type="text" id="fname" name="fname" placeholder="Enter your first name"><br>
+
+        <label for="lname"><p>Last Name:</p></label><br>
+        <input class="inputStyle" type="text" id="lname" name="lname" placeholder="Enter your last name"><br>
+
+        <label for="email"><p>Email Address:</p></label><br>
+        <input class="inputStyle" type="text" id="email" name="email" placeholder="Enter email address"><br>
+
+        <label for="password"><p>Password:</p></label><br>
+        <input class="inputStyle" type="password" id="password" name="password" placeholder="Enter password"><br><br>
+
+        <div class="tncArea">
+            <p class="tncText">Terms and conditions:&nbsp;&nbsp;&nbsp;&nbsp;</p>
+            <label class="container">
+                <input type="checkbox" name="checkbox" value="check" required>
+                <span class="checkmark"></span>
+            </label>
+        </div>
+        <input class="inputButton" type="submit" value="Register" id='validate' onclick="if(!this.form.checkbox.checked){alert('You must agree to the terms and conditions.');return false}">
+    </form>
+    <br>
+    <a href="termsandconditions" target="_blank">Terms and conditions</a>
+    <br>
+    <br>
+    <a href="login">Login here</a>
+    <br>
+</div>
+
+<script>
+
+    function validateForm() {
+        var a = document.forms["myForm"]["fname"].value;
+        if (a == "") {
+            alert("First name must be filled out");
+            return false;
+        }
+        var b = document.forms["myForm"]["lname"].value;
+        if (b == "") {
+            alert("Last name must be filled out");
+            return false;
+        }
+        var c = document.forms["myForm"]["email"].value;
+        if (c == "") {
+            return (false)
+            alert("Email address must be filled out");
+            return false;
+        }
+        var d = document.forms["myForm"]["password"].value;
+        if (d == "") {
+            alert("Password must be filled out");
+            return false;
+        }
+    }
+
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
+    function validate() {
+        var $result = $("#result");
+        var email = $("#email").val();
+        $result.text("");
+
+        if (validateEmail(email)) {
+            //$result.text(email + " is valid :)");
+            //$result.css("color", "green");
+        } else {
+            alert("Email address is not valid");
+            return false;
+        }
+    }
+
+    $("#validate").on("click", validate);
+// Validation sourced from https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
+</script>
+
+</body>
+</html>

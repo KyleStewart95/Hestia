@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hestia</title>
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="styles/styles.css">
+    <link rel="stylesheet" media="screen and (max-width: 899px)" href="styles/smallscreen.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/hover.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="scripts/graphAPI.js"></script>
+    <script type="text/javascript" src="scripts/dropdown.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous"></script>
+    <script src="scripts/controls.js"></script>
+    <script src="https://unpkg.com/vanilla-picker@2"></script>
+    <script src="scripts/openweather.js"></script>
+    <script src="scripts/accessibility.js"></script>
+    <script src="scripts/theme_selection.js"></script>
+    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" alt="Fav icon" />
+</head>
+<body id="text">
+<div id="openweather" class="openweather"></div>
+
+<!--
+--------------------------------------------------------------------------------
+                                Navigation
+--------------------------------------------------------------------------------
+-->
+
+<div class="nav">
+    <div class="topArea">
+        <a href="users.html">
+            <img src="img/user.png" alt="user icon" class="navTopIcon">
+        </a>
+    </div>
+
+    <div class="break"></div>
+
+    <div class="midArea">
+        <a href="index.html">
+            <img src="img/home.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="controls.html">
+            <img src="img/menu.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room1.html">
+            <img src="img/kitchen.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room2.html">
+            <img src="img/livingroom.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room3.html">
+            <img src="img/bedroom.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room4.html">
+            <img src="img/bathroom.png" alt="user icon" class="navMidIcon">
+        </a>
+    </div>
+
+    <div class="break"></div>
+
+    <div class="botArea">
+        <a href="accessibility.html">
+            <img src="img/acc.png" alt="user icon" class="navBotIcon">
+        </a>
+        <a href="settings.html">
+            <img src="img/settings.png" alt="user icon" class="navBotIcon">
+        </a>
+    </div>
+
+</div>
+
+<!--
+--------------------------------------------------------------------------------
+                                Content
+--------------------------------------------------------------------------------
+-->
+
+<div class="content" id="main">
+
+    <div class="bannerArea">
+        <a name="home"></a>
+        <img src="img/smarthomesmall.jpg" alt="Smart Home Image" class="bannerImage">
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="textandfont"><h3>Text and font settings</h3></a>
+            </div>
+            <div class="contentArea">
+                <select class="selectButton" name="id" id="font-size-choice">
+                    <option>Select One:</option>
+                    <option value="var(--height0_4)">xx-small</option>
+                    <option value="var(--height0_6)">x-small</option>
+                    <option value="var(--height0_6)">small</option>
+                    <option value="var(--height1)">medium</option> //Normal Text size
+                    <option value="var(--height1_2)">large</option>
+                    <option value="var(--height1_4)">x-large</option>
+                    <option value="var(--height1_6)">xx-large</option>
+                </select>
+                <input class="button50Left" type="button" id="save" value="Save Font Size" onclick="myFontSaved()">
+                <input class="button50Right" type="button" onclick="myFunction(localStorage.removeItem('fontSize'), location.reload());" value="Default Font Size">
+            </div>
+        </div>
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="themes"><h3>Colour Themes</h3></a>
+            </div>
+            <div class="contentArea">
+                <select class="selectButton" name="id" id="theme-color-choice">
+                    <option>Select One:</option>
+                    <option>Dark Mode</option>
+                    <option>Light Mode</option>
+                    <option>High Contrast Mode</option>
+                    <option>Red Mode</option>
+                    <option>Green Mode</option>
+                    <option>Blue Mode</option>option>
+                </select>
+                <input class="button50Left" type="button" id="saveTheme" value="Save Theme" onclick="myThemeSaved()">
+                <input class="button50Right" type="button" onclick="myFunction(localStorage.removeItem('theme'), location.reload());" value="Default Theme">
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="hestia"><h3>Hestia</h3></a>
+            </div>
+            <div class="contentArea">
+                <p>This is some example text so you can see what happens on the website when you change these settings.</p>
+                <p>This is the origin of Hestia, the greek goddess.</p>
+                <p>
+                    HESTIA was the virgin goddess of the hearth (both private and municipal) and the home.
+                    <br class="hideOnDesktop"><br class="hideOnDesktop">
+                    As the goddess of the family hearth she also presided over the cooking of bread and the preparation of the family meal.<br>
+                    Hestia was also the goddess of the sacrificial flame and received a share of every sacrifice to the gods.
+                    <br class="hideOnDesktop"><br class="hideOnDesktop">
+                    The cooking of the communal feast of sacrificial meat was naturally a part of her domain.
+                    <br class="hideOnDesktop"><br class="hideOnDesktop">
+                </p>
+                <P>For more information about Hestia's origin check out: <a href="https://www.theoi.com/Ouranios/Hestia.html" target="_blank">Theoi Project</a></P>
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="faq"><h3>Frequently Asked Questions</h3></a>
+            </div>
+            <div class="contentArea">
+                <p class="questions">
+                    How do I change the accessibility options.
+                </p>
+                <br class="hideOnDesktop">
+                <p class="answers">
+                    When you have logged into your account you can go to your options and in there you can find out the accessibility options at the bottom of the page.
+                </p>
+
+                <br>
+
+                <p class="questions">
+                    When you have logged into your account you can go to your options and in there you can find out the accessibility options at the bottom of the page.
+                </p>
+                <br class="hideOnDesktop">
+                <p class="answers">
+                    Our contact information:
+                    <br>
+                    For Hestia issues or questions email us: <a>Support@Hestia.com</a>
+                    <br>
+                    General enquires and other questions or issues email us: <a>ContactUs@BanduBeedInc.com</a>
+                    <br>
+                    Social Media: <a href="https://www.facebook.com/BanduBeedInc/" target="_blank">Facebook</a> and <a href="https://twitter.com/BanduBeedInc" target="_blank">Twitter</a>
+                    <br>
+                    Phone Number: 0131 449 5111
+                </p>
+
+                <br>
+
+                <p class="questions">
+                    How long does it take for a response to out emails?
+                </p>
+                <br class="hideOnDesktop">
+                <p class="answers">
+                    Normally we will respond within 24 hours of your query being asked but depending on delays this can take up-to 3 working days at most.
+                    <br>
+                    We are open and actively answering questions and queries between 8am to 6pm on Monday to Saturday and 9am to 12pm on Sunday.
+                </p>
+
+                <br>
+
+                <p class="questions">
+                    I can’t log in, is something wrong with your server?
+                </p>
+                <br class="hideOnDesktop">
+                <p class="answers">
+                    If we do have something going wrong or important information, we will share it on our social media pages so keep up to date with these for the most recent news or down time.
+                    <br>
+                    Social Media: <a href="https://www.facebook.com/BanduBeedInc/" target="_blank">Facebook</a> and <a href="https://twitter.com/BanduBeedInc" target="_blank">Twitter</a>
+                </p>
+
+                <br>
+
+                <p class="questions">
+                    Can we speak to a person if necessary?
+                </p>
+                <br class="hideOnDesktop">
+                <p class="answers">
+                    We are open and actively answering questions and queries between 8am to 6pm on Monday to Saturday and 9am to 12pm on Sunday.
+                    <br>
+                    Call us on: 0131 449 5111
+                </p>
+
+                <br><br>
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="help"><h3>Help and other information</h3></a>
+            </div>
+            <br class="hideOnDesktop">
+            <div class="contentArea">
+                <h4>Terms and Conditions</h4>
+                <br>
+                <p>The link below will show your our terms and conditions, if you have any questions please feel free to contact us.</p>
+                <p><a href="termsandconditions.html" target="_blank">Terms and conditions</a></p>
+                <br>
+
+                <h4>
+                    Contact Information and Open Times
+                </h4>
+                <br class="hideOnDesktop">
+                <p>
+                    For Hestia issues or questions email us: <a>Support@Hestia.com</a>
+                    <br>
+                    General enquires and other questions or issues email us: <a>ContactUs@BanduBeedInc.com</a>
+                    <br>
+                    Social Media: <a href="https://www.facebook.com/BanduBeedInc/" target="_blank">Facebook</a> and <a href="https://twitter.com/BanduBeedInc" target="_blank">Twitter</a>
+                    <br>
+                    Phone Number: 0131 449 5111
+                    <br><br class="hideOnDesktop">
+                    We are open and actively answering questions and queries between 8am to 6pm on Monday to Saturday and 9am to 12pm on Sunday
+                </p>
+
+                <br>
+
+                <h4>
+                    Icons and what they mean
+                </h4>
+                <br class="hideOnDesktop">
+                <table>
+                    <tr>
+                        <th class="table10">Icon</th>
+                        <th class="table20">Icon Name</th>
+                        <th class="table70">Description</th>
+                    </tr>
+
+                    <tr>
+                        <td class="expandingHeigh">
+                            <img src="img/user.png" alt="user icon" class="exampleIcon"></td>
+                        <td>
+                            <p class="centredText">
+                                User Icon
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                This is the user icon, it will take you to the user options and achievements.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="expandingHeigh">
+                            <img src="img/home.png" alt="user icon" class="exampleIcon"></td>
+                        <td>
+                            <p class="centredText">
+                                Home Icon
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                this is the home icon, it will take you to the home page which has the pre-set controls and some basic information about Hestia.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="expandingHeigh">
+                            <img src="img/menu.png" alt="user icon" class="exampleIcon"></td>
+                        <td>
+                            <p class="centredText">
+                                Control Icon
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                this is the control icon, these controls will treat your home as a one device. tdis can be useful if you want to change the temperature tdroughout your house or turn off all your lights.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="expandingHeigh"><img src="img/kitchen.png" alt="user icon" class="exampleIcon"></td>
+                        <td>
+                            <p class="centredText">
+                                Kitchen Icon
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                this is the icon for the kitchen controls.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="expandingHeigh"><img src="img/livingroom.png" alt="user icon" class="exampleIcon"></td>
+                        <td>
+                            <p class="centredText">
+                                Living-room Icon
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                this is the icon for the living-room controls.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="expandingHeigh"><img src="img/bedroom.png" alt="user icon" class="exampleIcon"></td>
+                        <td>
+                            <p class="centredText">
+                                Bedroom Icon
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                this is the icon for the bedroom controls.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="expandingHeigh"><img src="img/bathroom.png" alt="user icon" class="exampleIcon"></td>
+                        <td>
+                            <p class="centredText">
+                                Bathroom Icon
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                this is the icon for the bathroom controls.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="expandingHeigh"><img src="img/acc.png" alt="user icon" class="exampleIcon"></td>
+                        <td>
+                            <p class="centredText">
+                                Accessibility Icon
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                this is the UK standard accessibility icon, you can change your accessibility options in here. there is also the FAQ and Help area in here.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="expandingHeigh"><img src="img/settings.png" alt="user icon" class="exampleIcon"></td>
+                        <td>
+                            <p class="centredText">
+                                Settings Icon
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                this is the settings icon, if you go into it you can change the settings for Hestia.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="expandingHeigh"><img src="img/other/sleep.png" alt="user icon" class="exampleIcon"></td>
+                        <td>
+                            <p class="centredText">
+                                Sleep Mode Icon
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                One of the four presets, this will put everything to a power saving/ sleep mode.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="expandingHeigh"><img src="img/other/marker.png" alt="user icon" class="exampleIcon"></td>
+                        <td>
+                            <p class="centredText">
+                                Arriving Home Soon Icon
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                this will turn the heating back on up-to what the temperature was set at before.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="expandingHeigh"><img src="img/lock.png" alt="user icon" class="exampleIcon"></td>
+                        <td>
+                            <p class="centredText">
+                                Locked Achievement Icon
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                this will ether show a locked or unlocked icon depending if you have the achievements locked or unlocked.
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="expandingHeigh"><img src="img/unlock.png" alt="user icon" class="exampleIcon"></td>
+                        <td>
+                            <p class="centredText">
+                                Unlocked Achievement Icon
+                            </p>
+                        </td>
+                        <td>
+                            <p>
+                                this will ether show a locked or unlocked icon depending if you have the achievements locked or unlocked.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

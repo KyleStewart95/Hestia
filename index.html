@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hestia</title>
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="styles/styles.css">
+    <link rel="stylesheet" media="screen and (max-width: 899px)" href="styles/smallscreen.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/hover.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="scripts/graphAPI.js"></script>
+    <script type="text/javascript" src="scripts/dropdown.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous"></script>
+    <script src="scripts/controls.js"></script>
+    <script src="https://unpkg.com/vanilla-picker@2"></script>
+    <script src="scripts/openweather.js"></script>
+    <script src="scripts/accessibility.js"></script>
+    <script src="scripts/theme_selection.js"></script>
+    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" alt="Fav icon" />
+</head>
+<body id="text">
+<div id="openweather" class="openweather"></div>
+
+<!--
+--------------------------------------------------------------------------------
+                                Navigation
+--------------------------------------------------------------------------------
+-->
+
+<div class="nav">
+    <div class="topArea">
+        <a href="users.html">
+            <img src="img/user.png" alt="user icon" class="navTopIcon">
+        </a>
+    </div>
+
+    <div class="break"></div>
+
+    <div class="midArea">
+        <a href="index.html">
+            <img src="img/home.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="controls.html">
+            <img src="img/menu.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room1.html">
+            <img src="img/kitchen.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room2.html">
+            <img src="img/livingroom.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room3.html">
+            <img src="img/bedroom.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room4.html">
+            <img src="img/bathroom.png" alt="user icon" class="navMidIcon">
+        </a>
+    </div>
+
+    <div class="break"></div>
+
+    <div class="botArea">
+        <a href="accessibility.html">
+            <img src="img/acc.png" alt="user icon" class="navBotIcon">
+        </a>
+        <a href="settings.html">
+            <img src="img/settings.png" alt="user icon" class="navBotIcon">
+        </a>
+    </div>
+
+</div>
+
+<!--
+--------------------------------------------------------------------------------
+                                Content
+--------------------------------------------------------------------------------
+-->
+
+<div class="content" id="main">
+
+    <div class="bannerArea" >
+        <a name="home"></a>
+        <img src="img/smarthomesmall.jpg" alt="Smart Home Image" class="bannerImage">
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="information"><h3>Information</h3></a>
+            </div>
+            <div class="contentArea">
+                <div id="graphBase"><!-- This is using Googles API --></div>
+                <div id="graphComparison"><!-- This is using Googles API --></div>
+                <div class="buttonArea">
+                    <input class="buttonGraph50Left" type="button" id="#1" value="National Recommended">
+                    <input class="buttonGraph50Right" type="button" id="#2" value="Last Months Results">
+                </div>
+                <p>
+                    The comparison graph will change depending on what is selected.
+                </p>
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="presets"><h3>Pre-sets</h3></a>
+            </div>
+            <div class="contentArea">
+                <p>
+                    Pre-sets are predefined settings that will enable you to control your home easily.
+                </p>
+
+                <div class="boxArea">
+                    <div class="box-4">
+                        <img src="img/other/sleep.png" alt="Sleep Mode"
+                             class="imageInfo">
+                        <p>Sleep Mode</p>
+                        <br><br>
+                        <p class="mobileHidden">Everything will be put to a low power or a sleep mode.</p>
+                    </div>
+                    <div class="box-4">
+                        <img src="img/other/marker.png" alt="Arriving Home Soon" class="imageInfo">
+                        <p>Arriving Home Soon</p>
+                        <br><br>
+                        <p class="mobileHidden">This will turn the heating back on up-to what the temperature was set at before.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="sensors"><h3>Sensors</h3></a>
+            </div>
+            <div class="contentArea">
+                <p>
+                    These are the following sensors which are in gathering information.
+                </p>
+                <div class="listArea">
+                    <ul>
+                        <li>Humidity Sensor</li>
+                        <li>Solar Radiation Meter</li>
+                        <li>Temperature Sensor</li>
+                        <li>Wind Direction Sensor</li>
+                        <li>Wind Speed Sensor</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hestia</title>
+    <link rel="stylesheet" media="screen and (min-width: 900px)" href="styles/styles.css">
+    <link rel="stylesheet" media="screen and (max-width: 899px)" href="styles/smallscreen.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="scripts/hover.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="scripts/graphAPI.js"></script>
+    <script type="text/javascript" src="scripts/dropdown.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+            crossorigin="anonymous"></script>
+    <script src="scripts/controls.js"></script>
+    <script src="https://unpkg.com/vanilla-picker@2"></script>
+    <script src="scripts/openweather.js"></script>
+    <script src="scripts/accessibility.js"></script>
+    <script src="scripts/theme_selection.js"></script>
+    <link rel="shortcut icon" type="image/ico" href="img/favicon.ico" alt="Fav icon" />
+</head>
+<body id="text">
+<div id="openweather" class="openweather"></div>
+
+<!--
+--------------------------------------------------------------------------------
+                                Navigation
+--------------------------------------------------------------------------------
+-->
+
+<div class="nav">
+    <div class="topArea">
+        <a href="users.html">
+            <img src="img/user.png" alt="user icon" class="navTopIcon">
+        </a>
+    </div>
+
+    <div class="break"></div>
+
+    <div class="midArea">
+        <a href="index.html">
+            <img src="img/home.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="controls.html">
+            <img src="img/menu.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room1.html">
+            <img src="img/kitchen.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room2.html">
+            <img src="img/livingroom.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room3.html">
+            <img src="img/bedroom.png" alt="user icon" class="navMidIcon">
+        </a>
+        <a href="room4.html">
+            <img src="img/bathroom.png" alt="user icon" class="navMidIcon">
+        </a>
+    </div>
+
+    <div class="break"></div>
+
+    <div class="botArea">
+        <a href="accessibility.html">
+            <img src="img/acc.png" alt="user icon" class="navBotIcon">
+        </a>
+        <a href="settings.html">
+            <img src="img/settings.png" alt="user icon" class="navBotIcon">
+        </a>
+    </div>
+
+</div>
+
+<!--
+--------------------------------------------------------------------------------
+                                Content
+--------------------------------------------------------------------------------
+-->
+
+<div class="content" id="main">
+
+    <div class="bannerArea" id="home">
+        <img src="img/smarthomesmall.jpg" alt="Smart Home Image" class="bannerImage">
+    </div>
+
+    <div class="contentBox" id="device">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="devices"><h3>Devices and Sensors</h3></a>
+            </div>
+            <div class="contentArea">
+                <p>You can assign your sensors or devices with names and also the rooms where they are located.</p>
+                <table>
+                    <tr>
+                        <th class="table10">Device ID</th>
+                        <th class="table50">Device Name</th>
+                        <th class="table40">Location of the sensor</th>
+                    </tr>
+                    <tr>
+                        <td class="tablePadding"><p>Device 1</p></td>
+                        <td>
+                            <label for="deviceID1"></label>
+                            <input class="inputRoomStyle" type="text" id="deviceID1" name="deviceID1" value="Example Device 1">
+                        </td>
+                        <td class="tableArea">
+                            <select class="selectOption" name="id" id="roomSelection">
+                                <option>Select One:</option>
+                                <option>Room 1: Kitchen</option>
+                                <option>Room 2: Living Room</option>
+                                <option>Room 3: Bedroom</option>
+                                <option>Room 4: Bathroom</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tablePadding"><p>Device 2</p></td>
+                        <td>
+                            <label for="deviceID2"></label>
+                            <input class="inputRoomStyle" type="text" id="deviceID2" name="deviceID2" value="Example Device 2">
+                        </td>
+                        <td class="tableArea">
+                            <select class="selectOption" name="id" id="roomSelection">
+                                <option>Select One:</option>
+                                <option>Room 1: Kitchen</option>
+                                <option>Room 2: Living Room</option>
+                                <option>Room 3: Bedroom</option>
+                                <option>Room 4: Bathroom</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tablePadding"><p>Device 3</p></td>
+                        <td>
+                            <label for="deviceID3"></label>
+                            <input class="inputRoomStyle" type="text" id="deviceID3" name="deviceID3" value="Example Device 3">
+                        </td>
+                        <td class="tableArea">
+                            <select class="selectOption" name="id" id="roomSelection">
+                                <option>Select One:</option>
+                                <option>Room 1: Kitchen</option>
+                                <option>Room 2: Living Room</option>
+                                <option>Room 3: Bedroom</option>
+                                <option>Room 4: Bathroom</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tablePadding"><p>Device 4</p></td>
+                        <td>
+                            <label for="deviceID4"></label>
+                            <input class="inputRoomStyle" type="text" id="deviceID4" name="deviceID4" value="Example Device 4">
+                        </td>
+                        <td class="tableArea">
+                            <select class="selectOption" name="id" id="roomSelection">
+                                <option>Select One:</option>
+                                <option>Room 1: Kitchen</option>
+                                <option>Room 2: Living Room</option>
+                                <option>Room 3: Bedroom</option>
+                                <option>Room 4: Bathroom</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <input class="inputButton" type="submit" value="Update">
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="rooms"><h3>Room Options</h3></a>
+            </div>
+            <div class="contentArea">
+                <p>You can assign your sensors or devices with names and also the rooms where they are located.</p>
+                <table>
+                    <tr>
+                        <th class="table10">Room ID</th>
+                        <th class="table50">Room Name</th>
+                        <th class="table40">Description of Room</th>
+                    </tr>
+                    <tr>
+                        <td class="tablePadding"><p>Room 1</p></td>
+                        <td>
+                            <label for="roomName1"></label>
+                            <input class="inputRoomStyle" type="text" id="roomName1" name="roomName1" value="Kitchen">
+                        </td>
+                        <td>
+                            <label for="roomDesc1"></label>
+                            <input class="inputRoomStyle" type="text" id="roomDesc1" name="roomDesc1" value="Kitchen">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tablePadding"><p>Room 2</p></td>
+                        <td>
+                            <label for="roomName2"></label>
+                            <input class="inputRoomStyle" type="text" id="roomName2" name="roomName2" value="Living room">
+                        </td>
+                        <td>
+                            <label for="roomDesc2"></label>
+                            <input class="inputRoomStyle" type="text" id="roomDesc2" name="roomDesc2" value="Living room">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tablePadding"><p>Room 3</p></td>
+                        <td>
+                            <label for="roomName3"></label>
+                            <input class="inputRoomStyle" type="text" id="roomName3" name="roomName3" value="Bedroom">
+                        </td>
+                        <td>
+                            <label for="roomDesc3"></label>
+                            <input class="inputRoomStyle" type="text" id="roomDesc3" name="roomDesc3" value="Bedroom">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="tablePadding"><p>Room 4</p></td>
+                        <td>
+                            <label for="roomName4"></label>
+                            <input class="inputRoomStyle" type="text" id="roomName4" name="roomName4" value="Bathroom">
+                        </td>
+                        <td>
+                            <label for="roomDesc4"></label>
+                            <input class="inputRoomStyle" type="text" id="roomDesc4" name="roomDesc4" value="Bathroom">
+                        </td>
+                    </tr>
+                </table>
+                <input class="inputButton" type="submit" value="Update">
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+    <div class="contentBox">
+        <div class="contentBoxArea">
+            <div class="contentTitle">
+                <a name="wps"><h3>WPS</h3></a>
+            </div>
+            <div class="contentArea">
+                <p>
+                    Connect devices via Wi-Fi Protected Setup (WPS).
+                </p>
+                <input class="inputButton" type="submit" value="Scan for new devices">
+            </div>
+            <div class="smallbreak"></div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

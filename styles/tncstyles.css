@@ -1,0 +1,284 @@
+/*
+--------------------------------------------------------------------------------
+                                Default Page Setting
+--------------------------------------------------------------------------------
+*/
+
+*
+{
+    margin: 0;
+    font-size: 16px;
+    font-family: sans-serif;
+}
+
+/*
+--------------------------------------------------------------------------------
+                                Accessibility CSS
+--------------------------------------------------------------------------------
+*/
+/* Normal/Dark theme for the website */
+:root /* This sets the normal color scheme for the website */
+{
+    /* Size for text using rem, base font size is 16px */
+    --height0_1: 0.1rem;
+    --height0_2: 0.2rem;
+    --height0_3: 0.3rem;
+    --height0_4: 0.4rem;
+    --height0_5: 0.5rem;
+    --height0_6: 0.6rem;
+    --height0_7: 0.7rem;
+    --height0_8: 0.8rem;
+    --height0_9: 0.9rem;
+    --height1: 1rem;
+    --height1_1: 1.1rem;
+    --height1_2: 1.2rem;
+    --height1_3: 1.3rem;
+    --height1_4: 1.4rem;
+    --height1_5: 1.5rem;
+    --height1_6: 1.6rem;
+    --height1_7: 1.7rem;
+    --height1_8: 1.8rem;
+    --height1_9: 1.9rem;
+    --height2: 2rem;
+    --height2_1: 2.1rem;
+    --height2_2: 2.2rem;
+    --height2_3: 2.3rem;
+    --height2_4: 2.4rem;
+    --height2_5: 2.5rem;
+    --height2_6: 2.6rem;
+    --height2_7: 2.7rem;
+    --height2_8: 2.8rem;
+    --height2_9: 2.9rem;
+    --height3: 3rem;
+    --height3_1: 3.1rem;
+    --height3_2: 3.2rem;
+    --height3_3: 3.3rem;
+    --height3_4: 3.4rem;
+    --height3_5: 3.5rem;
+    --height3_6: 3.6rem;
+    --height3_7: 3.7rem;
+    --height3_8: 3.8rem;
+    --height3_9: 3.9rem;
+    --height4: 4rem;
+    --height4_1: 4.1rem;
+    --height4_2: 4.2rem;
+    --height4_3: 4.3rem;
+    --height4_4: 4.4rem;
+    --height4_5: 4.5rem;
+    --height4_6: 4.6rem;
+    --height4_7: 4.7rem;
+    --height4_8: 4.8rem;
+    --height4_9: 4.9rem;
+    --height5: 5rem;
+    --height5_1: 5.1rem;
+    --height5_2: 5.2rem;
+    --height5_3: 5.3rem;
+    --height5_4: 5.4rem;
+    --height5_5: 5.5rem;
+    --height5_6: 5.6rem;
+    --height5_7: 5.7rem;
+    --height5_8: 5.8rem;
+    --height5_9: 5.9rem;
+    --height6: 6rem;
+    --height6_1: 6.1rem;
+    --height6_2: 6.2rem;
+    --height6_3: 6.3rem;
+    --height6_4: 6.4rem;
+    --height6_5: 6.5rem;
+    --height6_6: 6.6rem;
+    --height6_7: 6.7rem;
+    --height6_8: 6.8rem;
+    --height6_9: 6.9rem;
+    --height7: 7rem;
+    --height8: 8rem;
+    --height9: 9rem;
+    --height10: 10rem;
+    --height11: 11rem;
+    --height12: 12rem;
+    --height13: 13rem;
+    --height14: 14rem;
+    --height15: 15rem;
+    --height16: 16rem;
+    --height24: 24rem;
+    --height32: 32rem;
+
+    /* This is the font sizes used through out this website. */
+    --paraText: var(--height1);
+    --headLargeText: var(--height3);
+    --headText1: var(--height2_3);
+    --headText2: var(--height2_5);
+    --headText3: var(--height1_8);
+    --listText: var(--height0_8);
+    --breakHeight: 0.1rem;/* This only needs to increase by 0.1 so it has its own height */
+    --borderRadius: 0.5rem;
+    --onePixel: 0.0625rem;
+    --buttonPadding: 0.8rem 1.2rem;
+    --achievementHeight: 6rem;
+    --imageSize: 5rem;
+    --sliderLocation: 0.2rem;
+    --sliderWidth: 0.3rem;
+    --sliderHeight: 0.5rem;
+    --sliderLength: 6rem;
+    --paraLineHeight: 1.5rem;
+
+    /* Main colours used */
+    --color1: #ffffff; /* White */
+    --color2: #000000; /* Black */
+    --color3: #E9E9E9; /* Text colour */
+    --color4: #0e0797; /* Heading colour - not used */
+    --color5: #53575e; /* Background Theme Colour - Light Grey */
+    --color6: #2b4570; /* Button Background - Light blue */
+    --color7: #4067a7; /* Button Hover - Light blue */
+    --color8: #202225; /* Main Nav - Dark Grey */
+    --color9: #171717; /* 2nd Nav colour */
+    --color10: #2b4570; /* 3rd Nav colour - rgba(23,23,23,0.66) */
+    --color11: #818181; /* Nav Text Colour */
+    --color12: #f1f1f1; /* Nav Text Colour on Hover */
+    --color13: #555555; /* Nav List element background colour on hover */
+    --color14: #919191; /* Break colour - Light Grey */
+    --color15: #0e0797; /* Hyper links for external websites */
+
+    /* Nav colours used */
+    --navMain: var(--color8);
+    --navColor1: var(--color9);
+    --navColor2: var(--color10);
+    --navText: var(--color11);
+    --navTextHover: var(--color12);
+    --navTextBackgroundHover: var(--color13);
+
+    /* Theme colours used */
+    /* --foreground: var(--color2); - IF nothing gets changed remove */
+    --background: var(--color5);
+    --break: var(--color14);
+
+    /* This is the font colours used through out this website. */
+    --textColorContent: var(--color3); /* Used for main content text colour */
+    --textColorHeader: var(--color1); /* Used for header text colour */
+    --hypertextLinks:var(--color15);
+
+    /* This is the button colours used through out this website. */
+    --buttonBackground: var(--color6);
+    --buttonBorder: var(--color1);
+    --buttonHover: var(--color7);
+    --buttonText: var(--color3);
+
+    /* This is the select colours used through out this website. */
+    --SelectOptionBackground: var(--color5);
+    --SelectOptionBorder: var(--color1);
+
+    /* This is the input colours used through out this website. */
+    --inputBackground: var(--color5);
+    --inputBorder: var(--color1);
+    --inputText: var(--color3);
+
+    /* Table border colour */
+    --tableBorder: var(--color1);
+
+}
+
+body
+{
+    background: var(--background);
+    color: var(--foreground);
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.content
+{
+    width: 96%;
+    margin: 2%;
+}
+
+p
+{
+    line-height: var(--paraLineHeight);
+}
+
+h1, h2, h3, h5, h6
+{
+    padding-bottom: var(--headLineHeight);
+}
+
+/* Font Size that changes */
+p
+{
+    color: var(--textColorContent);
+    font-size: var(--paraText);
+}
+
+span
+{
+    color: var(--textColorContent);
+    font-size: var(--paraText);
+}
+
+a
+{
+    font-size: var(--paraText);
+    color: var(--hypertextLinks);
+    text-decoration: underline;
+}
+
+a:visited
+{
+    color: var(--hypertextLinks);
+    text-decoration: underline;
+}
+
+h1
+{
+    font-size: var(--paraText);
+    color: var(--textColorHeader);
+}
+
+h2
+{
+    font-size: var(--headLargeText);
+    color: var(--textColorHeader);
+    text-decoration: underline;
+}
+
+h3
+{
+    font-size: var(--headText1);
+    color: var(--textColorHeader);
+}
+
+h4
+{
+    font-size: var(--headText3);
+    color: var(--textColorHeader);
+}
+
+h5
+{
+    font-size: var(--headText2);
+    color: var(--textColorHeader);
+}
+
+h6
+{
+    font-size: var(--headText2);
+    color: var(--textColorHeader);
+}
+
+ul li
+{
+    font-size: var(--listText);
+    color: var(--textColorContent);
+}
+
+label p
+{
+    line-height: 0;
+    padding-bottom: 0;
+    padding-top: 2%;
+}
+
+::placeholder
+{
+    font-size: var(--paraText);
+    color: var(--textColorContent);
+}
