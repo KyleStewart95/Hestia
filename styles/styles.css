@@ -1553,6 +1553,20 @@ td, th
     {
         margin: 10% auto;
     }
+
+    @media screen and (max-height: 2000px) /* 3:2 Aspect Ratio - 3000 x 2000 */
+    {
+        :root
+        {
+            --imageSize: 5rem;
+        }
+
+        .nav
+        {
+            width: 6%;
+        }
+    }
+
 }
 
 @media all and (max-width: 2999px) and (min-width: 2560px) /* QHD - 2560 x 1440 */
@@ -1663,6 +1677,19 @@ td, th
     .nav
     {
         width: 7%;
+    }
+
+    @media screen and (max-height: 1080px) /* Ultrawide 1080p - 2560 x 1080 */
+    {
+        :root
+        {
+            --imageSize: 5rem;
+        }
+
+        .nav
+        {
+            width: 6%;
+        }
     }
 
 }
