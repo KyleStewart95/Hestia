@@ -1556,9 +1556,21 @@ td, th
 
     @media screen and (max-height: 2000px) /* 3:2 Aspect Ratio - 3000 x 2000 */
     {
-        :root
+
+        .navTopIcon
         {
-            --imageSize: 5rem;
+            margin: 30% auto;
+        }
+
+        .navBotIcon
+        {
+            margin-top: 30%;
+        }
+
+
+        .midArea
+        {
+            height: 70%;
         }
 
         .nav
